@@ -13,6 +13,9 @@ import {RunningListComponent} from "./activities/running/running-list/running-li
 import {RunningActivitiesService} from "./activities/running/shared/runningActivities.service";
 import {InsightsComponent} from "./insights/insights.component";
 import { CyclingAddComponent } from './activities/cycling/cycling-add/cycling-add.component';
+import { InsightsListComponent } from './insights/insights-list/insights-list.component';
+import {InsightService} from "./insights/shared/insightService.service";
+import { RunningAddComponent } from './activities/running/running-add/running-add.component';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { CyclingAddComponent } from './activities/cycling/cycling-add/cycling-ad
     InsightsComponent,
     RunningComponent,
     RunningListComponent,
-    CyclingAddComponent
+    CyclingAddComponent,
+    InsightsListComponent,
+    RunningAddComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { CyclingAddComponent } from './activities/cycling/cycling-add/cycling-ad
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [CyclingService, RunningActivitiesService],
+  providers: [CyclingService, RunningActivitiesService, InsightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

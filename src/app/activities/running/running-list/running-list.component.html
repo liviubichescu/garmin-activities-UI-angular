@@ -1,36 +1,43 @@
-<table class="tableCtrl">
+<div class="container">
+  <table class="table">
 
-  <tbody *ngFor="let runner of runningData">
+    <tbody *ngFor="let runner of runningData">
 
-  <tr *ngIf="runner.type === 'RUNNING'">
-    <td>
-      <table class="activity_table">
-        <tr>
-          <td>
-            <div class="activity_type_img">
-              <img src="../../../../assets/running.png">
-            </div>
-          </td>
-          <td>{{ parseMyDate(runner.dateTime) | date:'MMM dd' }}
-            <p>{{ parseMyDate(runner.dateTime) | date:'yyyy' }}</p>
-          </td>
-          <td>{{runner.name}}
-            <p>{{runner.type}}</p>
-          </td>
-        </tr>
-        <tr>
-          <td>{{runner.distance}}
-            <p>DISTANCE</p>
-          </td>
-          <td>{{runner.duration}}
-            <p>TIME</p>
-          </td>
-          <td>{{runner.avgPace}}
-            <p>AVG PACE</p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  </tbody>
-</table>
+    <tr *ngIf="runner.type === 'RUNNING'">
+      <th scope="row">
+        <!--<i class="fas fa-user-tie fa-lg"></i>-->
+      </th>
+      <td>
+        <table class="activity_table" style="width: 100%">
+          <tr>
+            <td>
+              <div class="activity_type_img">
+                <img src="../../../../assets/running.png">
+              </div>
+            </td>
+            <td>{{ parseMyDate(runner.dateTime) | date:'MMM dd' }}
+              <p>{{ parseMyDate(runner.dateTime) | date:'yyyy' }}</p>
+            </td>
+            <td>{{runner.name}}
+              <p>{{runner.type}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>{{runner.distance.value}} {{runner.distance.measurementUnit}}
+              <p>DISTANCE</p>
+            </td>
+            <td>{{runner.duration}}
+              <p>TIME</p>
+            </td>
+            <td>{{runner.pace}}
+              <p>AVG PACE</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+

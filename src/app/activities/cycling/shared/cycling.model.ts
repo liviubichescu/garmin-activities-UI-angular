@@ -1,9 +1,9 @@
 export class Cycling {
-  name : string;
+  name: string;
   type: string;
-  dateTime : string;
+  dateTime: string;
   duration: number;
-  distance : number;
+  distance: number;
   avgSpeed: number;
 
 }

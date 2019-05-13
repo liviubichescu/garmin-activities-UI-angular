@@ -1,0 +1,52 @@
+<div class="add_user"> Add a manual Activity <br>
+  <label>
+    Activity name:
+  </label>
+  <input [(ngModel)]="runningActivity.name" name="firstname" type="text" class="form-control" id=#firstName
+         placeholder="Enter first name" required>
+  <br>
+  <label>
+    Activity type:
+  </label>
+  <select [(ngModel)]="runningActivity.type" name="clientID" class="form-control" id="clientID">
+    <option *ngFor="let type_item of activTypes" [value]="type_item">
+      {{type_item}}
+    </option>
+  </select>
+  <br>
+  <label>
+    Date:
+  </label>
+  <input [(ngModel)]="runningActivity.dateTime" type="date" name="date" class="form-control" id="date"
+         placeholder="Date" required>
+  <br>
+  <label>
+    Duration:
+  </label>
+  <input [(ngModel)]="runningActivity.duration" name="duration" type="text" class="form-control" id=#duration
+         placeholder="Enter duration" required>
+  <br>
+  <label>
+    Distance:
+  </label>
+  <input [(ngModel)]="distance.value" name="distance" type="text" class="form-control" id=#distance
+         placeholder="Enter distance" required>
+  <br>
+  <label>
+    Unit:
+  </label>
+  <select [(ngModel)]="distance.measurementUnit" name="unit" class="form-control" id="unit">
+    <option *ngFor="let unit of distanceUnit" [value]="unit">
+      {{unit}}
+    </option>
+  </select>
+  <br>
+  <div *ngIf="runningActivity.type === 'RUNNING'">
+    <button type="submit" class="btn btn-success mr-5" (click)="save()">Save</button>
+  </div>
+</div>
+
+
+
+
+
